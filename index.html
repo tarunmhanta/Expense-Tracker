@@ -50,7 +50,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Ambient blobs ───────────────────────────── */
     body::before {
       content: '';
       position: fixed;
@@ -62,7 +61,6 @@
         radial-gradient(500px circle at 90% 100%, rgba(0, 229, 160, .07) 0%, transparent 60%);
     }
 
-    /* ── App shell ───────────────────────────────── */
     #app {
       position: relative;
       z-index: 1;
@@ -74,7 +72,6 @@
       padding: 0 20px 40px;
     }
 
-    /* ── Top bar ─────────────────────────────────── */
     .topbar {
       display: flex;
       align-items: center;
@@ -116,7 +113,6 @@
       transform: rotate(45deg);
     }
 
-    /* ── Page transitions ────────────────────────── */
     .view {
       animation: rise .35s cubic-bezier(.25, .8, .25, 1) both;
     }
@@ -133,9 +129,7 @@
       }
     }
 
-    /* ══════════════════════════════════════════════
-   WELCOME / SETUP SCREEN
-══════════════════════════════════════════════ */
+    /* ══ WELCOME ══ */
     .welcome {
       flex: 1;
       display: flex;
@@ -270,15 +264,12 @@
       transform: translateY(0) scale(.98);
     }
 
-    /* ══════════════════════════════════════════════
-   ADD TRANSACTION SCREEN
-══════════════════════════════════════════════ */
+    /* ══ ADD SCREEN ══ */
     .add-screen {
       flex: 1;
       padding-top: 8px;
     }
 
-    /* Month summary pill */
     .month-pill {
       display: flex;
       align-items: center;
@@ -339,7 +330,6 @@
       color: var(--debit);
     }
 
-    /* Type toggle */
     .type-row {
       display: flex;
       gap: 10px;
@@ -383,7 +373,6 @@
       color: var(--text);
     }
 
-    /* Input fields */
     .field {
       margin-bottom: 14px;
     }
@@ -461,7 +450,6 @@
       -webkit-appearance: none;
     }
 
-    /* Submit button */
     .submit-btn {
       width: 100%;
       padding: 17px;
@@ -509,7 +497,7 @@
       box-shadow: none;
     }
 
-    /* Recent transactions (compact list below form) */
+    /* ── Recent wrap ── */
     .recent-wrap {
       margin-top: 28px;
     }
@@ -534,6 +522,98 @@
       border-radius: 20px;
       padding: 3px 9px;
       font-weight: 600;
+    }
+
+    /* ── Search bar ── */
+    .search-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .search-row input[type=text] {
+      flex: 1;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      padding: 11px 14px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    .search-row input[type=text]:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    .search-row input[type=text]::placeholder {
+      color: var(--faint);
+    }
+
+    .search-btn {
+      padding: 0 16px;
+      border: none;
+      border-radius: var(--r-sm);
+      background: var(--accent);
+      color: #fff;
+      font-family: 'Syne', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background .2s, transform .15s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .search-btn:hover {
+      background: #6a5ce6;
+    }
+
+    .search-btn:active {
+      transform: scale(.97);
+    }
+
+    .search-btn:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+    }
+
+    .search-clear-btn {
+      padding: 0 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      background: var(--surface);
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+      white-space: nowrap;
+    }
+
+    .search-clear-btn:hover {
+      color: var(--text);
+      border-color: var(--faint);
+    }
+
+    .search-meta {
+      font-size: 12px;
+      color: var(--muted);
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .search-meta strong {
+      color: var(--accent);
     }
 
     .txn-list {
@@ -613,9 +693,18 @@
       font-size: 13px;
     }
 
-    /* ══════════════════════════════════════════════
-   SETTINGS SCREEN
-══════════════════════════════════════════════ */
+    .loading-note {
+      text-align: center;
+      padding: 20px 0;
+      color: var(--muted);
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* ══ SETTINGS ══ */
     .settings-screen {
       flex: 1;
       padding-top: 6px;
@@ -866,7 +955,7 @@
       border-color: var(--debit);
     }
 
-    /* ── Toast ─────────────────────────────────── */
+    /* ── Toast ── */
     #toast {
       position: fixed;
       bottom: 28px;
@@ -901,7 +990,6 @@
       color: var(--debit);
     }
 
-    /* ── Spinner ────────────────────────────────── */
     .spin {
       width: 15px;
       height: 15px;
@@ -918,7 +1006,6 @@
       }
     }
 
-    /* ── Scrollbar ─────────────────────────────── */
     ::-webkit-scrollbar {
       width: 4px;
     }
@@ -946,7 +1033,7 @@
 
   <script>
     /* ════════════════════════════════════════════
-       GAS CODE (plain array — no nested backticks)
+       GAS CODE
     ════════════════════════════════════════════ */
     var GAS = [
       "// Spendly – Google Apps Script",
@@ -984,39 +1071,100 @@
       "",
       "function doGet(e) {",
       "  try {",
-      "    var action = e.parameter.action;",
-      "    if (action != \"summary\") {",
-      "      return ContentService.createTextOutput(\"Spendly API Running\");",
-      "    }",
-      "    var ss = SpreadsheetApp.getActiveSpreadsheet();",
-      "    var sheet = ss.getSheetByName('Transactions');",
-      "    if (!sheet) {",
+      "    var action = e.parameter.action || '';",
+      "",
+      "    // ── Summary (month totals) ──────────────────",
+      "    if (action === 'summary') {",
+      "      var ss = SpreadsheetApp.getActiveSpreadsheet();",
+      "      var sheet = ss.getSheetByName('Transactions');",
+      "      if (!sheet) {",
+      "        return ContentService",
+      "          .createTextOutput(JSON.stringify({success:true,credit:0,debit:0,balance:0}))",
+      "          .setMimeType(ContentService.MimeType.JSON);",
+      "      }",
+      "      var data = sheet.getDataRange().getValues();",
+      "      var now = new Date();",
+      "      var currentMonth = now.getMonth() + 1;",
+      "      var currentYear  = now.getFullYear();",
+      "      var credit = 0, debit = 0;",
+      "      for (var i = 1; i < data.length; i++) {",
+      "        if (Number(data[i][5]) === currentMonth && Number(data[i][6]) === currentYear) {",
+      "          var type = String(data[i][2]).toLowerCase();",
+      "          var amt  = Number(data[i][3]) || 0;",
+      "          if (type === 'credit') credit += amt;",
+      "          if (type === 'debit')  debit  += amt;",
+      "        }",
+      "      }",
       "      return ContentService",
-      "        .createTextOutput(JSON.stringify({success: true, credit: 0, debit: 0, balance: 0}))",
+      "        .createTextOutput(JSON.stringify({success:true,credit:credit,debit:debit,balance:credit-debit}))",
       "        .setMimeType(ContentService.MimeType.JSON);",
       "    }",
-      "    var data = sheet.getDataRange().getValues();",
-      "    var now = new Date();",
-      "    var currentMonth = now.getMonth() + 1;",
-      "    var currentYear = now.getFullYear();",
-      "    var credit = 0;",
-      "    var debit = 0;",
-      "    for (var i = 1; i < data.length; i++) {",
-      "      var rowMonth = Number(data[i][5]);",
-      "      var rowYear = Number(data[i][6]);",
-      "      var type = String(data[i][2]).toLowerCase();",
-      "      var amount = Number(data[i][3]) || 0;",
-      "      if (rowMonth === currentMonth && rowYear === currentYear) {",
-      "        if (type === \"credit\") { credit += amount; }",
-      "        if (type === \"debit\") { debit += amount; }",
+      "",
+      "    // ── Recent 5 transactions ───────────────────",
+      "    if (action === 'recent') {",
+      "      var ss = SpreadsheetApp.getActiveSpreadsheet();",
+      "      var sheet = ss.getSheetByName('Transactions');",
+      "      if (!sheet || sheet.getLastRow() < 2) {",
+      "        return ContentService",
+      "          .createTextOutput(JSON.stringify({success:true,transactions:[]}))",
+      "          .setMimeType(ContentService.MimeType.JSON);",
       "      }",
+      "      var lastRow = sheet.getLastRow();",
+      "      // grab last 5 data rows (skip header row 1)",
+      "      var startRow = Math.max(2, lastRow - 4);",
+      "      var numRows  = lastRow - startRow + 1;",
+      "      var rows = sheet.getRange(startRow, 1, numRows, 5).getValues();",
+      "      var txns = [];",
+      "      for (var i = rows.length - 1; i >= 0; i--) {",
+      "        txns.push({",
+      "          dateStr: rows[i][0],",
+      "          timeStr: rows[i][1],",
+      "          type:    rows[i][2],",
+      "          amount:  rows[i][3],",
+      "          reason:  rows[i][4]",
+      "        });",
+      "      }",
+      "      return ContentService",
+      "        .createTextOutput(JSON.stringify({success:true,transactions:txns}))",
+      "        .setMimeType(ContentService.MimeType.JSON);",
       "    }",
-      "    return ContentService",
-      "      .createTextOutput(JSON.stringify({success: true, credit: credit, debit: debit, balance: credit - debit}))",
-      "      .setMimeType(ContentService.MimeType.JSON);",
+      "",
+      "    // ── Search all transactions ─────────────────",
+      "    if (action === 'search') {",
+      "      var q = (e.parameter.q || '').toLowerCase().trim();",
+      "      var ss = SpreadsheetApp.getActiveSpreadsheet();",
+      "      var sheet = ss.getSheetByName('Transactions');",
+      "      if (!sheet || sheet.getLastRow() < 2) {",
+      "        return ContentService",
+      "          .createTextOutput(JSON.stringify({success:true,transactions:[],total:0}))",
+      "          .setMimeType(ContentService.MimeType.JSON);",
+      "      }",
+      "      var data = sheet.getRange(2, 1, sheet.getLastRow()-1, 5).getValues();",
+      "      var results = [];",
+      "      for (var i = data.length - 1; i >= 0; i--) {",
+      "        var reason = String(data[i][4]).toLowerCase();",
+      "        var type   = String(data[i][2]).toLowerCase();",
+      "        var date   = String(data[i][0]).toLowerCase();",
+      "        if (!q || reason.indexOf(q) !== -1 || type.indexOf(q) !== -1 || date.indexOf(q) !== -1) {",
+      "          results.push({",
+      "            dateStr: data[i][0],",
+      "            timeStr: data[i][1],",
+      "            type:    data[i][2],",
+      "            amount:  data[i][3],",
+      "            reason:  data[i][4]",
+      "          });",
+      "        }",
+      "      }",
+      "      return ContentService",
+      "        .createTextOutput(JSON.stringify({success:true,transactions:results,total:results.length}))",
+      "        .setMimeType(ContentService.MimeType.JSON);",
+      "    }",
+      "",
+      "    return ContentService.createTextOutput('Spendly API Running');",
+      "",
       "  } catch(err) {",
       "    return ContentService",
-      "      .createTextOutput(JSON.stringify({success: false, error: err.toString()}))",
+      "      .createTextOutput(JSON.stringify({success:false,error:err.toString()}))",
       "      .setMimeType(ContentService.MimeType.JSON);",
       "  }",
       "}",
@@ -1103,18 +1251,16 @@
     var S = {
       url: localStorage.getItem('sp_url') || '',
       txns: JSON.parse(localStorage.getItem('sp_txns') || '[]'),
-      type: 'debit'   // current add-type
+      type: 'debit',
+      searchMode: false,
+      searchQ: ''
     };
 
     /* ════════════════════════════════════════════
        BOOT
     ════════════════════════════════════════════ */
     function boot() {
-      if (S.url) {
-        showAdd();
-      } else {
-        showWelcome();
-      }
+      if (S.url) { showAdd(); } else { showWelcome(); }
     }
 
     /* ════════════════════════════════════════════
@@ -1144,69 +1290,16 @@
     function showAdd() {
       document.getElementById('gear').style.display = 'flex';
 
-      // calculate this-month totals
-      // current month values
       var now = new Date();
       var m = now.getMonth();
       var y = now.getFullYear();
-
-      var mo = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
-        'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-
-      var cr = 0;
-      var db = 0;
-      var bal = 0;
-
-      // load live data from sheets
-      fetch(S.url + '?action=summary')
-        .then(function (res) {
-          return res.json();
-        })
-        .then(function (data) {
-
-          cr = data.credit || 0;
-          db = data.debit || 0;
-          bal = data.balance || 0;
-
-          document.getElementById('credit-val').innerHTML =
-            '&#8377;' + fmt(cr);
-
-          document.getElementById('debit-val').innerHTML =
-            '&#8377;' + fmt(db);
-
-          var balEl = document.getElementById('balance-val');
-
-          balEl.innerHTML =
-            '&#8377;' + fmt(Math.abs(bal));
-
-          balEl.className =
-            'month-bal ' +
-            (bal > 0 ? 'pos' : bal < 0 ? 'neg' : 'neu');
-
-        })
-        .catch(function (err) {
-          console.log(err);
-        });
-
-      var balCls = bal > 0 ? 'pos' : bal < 0 ? 'neg' : 'neu';
+      var mo = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
 
       var cAct = S.type === 'credit' ? 'c-active' : '';
       var dAct = S.type === 'debit' ? 'd-active' : '';
 
-      // recent 6 transactions
-      var recent = S.txns.slice().sort(function (a, b) { return new Date(b.date) - new Date(a.date); }).slice(0, 6);
-      var txnRows = recent.length ? recent.map(function (t) {
-        var ic = t.type === 'credit' ? '&#x2B06;' : '&#x2B07;';
-        var sg = t.type === 'credit' ? '+' : '&#x2212;';
-        return '<div class="txn-row">' +
-          '<div class="txn-dot ' + t.type + '">' + ic + '</div>' +
-          '<div class="txn-body">' +
-          '<div class="txn-name">' + esc(t.reason) + '</div>' +
-          '<div class="txn-time">' + t.dateStr + ' &middot; ' + t.timeStr + '</div>' +
-          '</div>' +
-          '<div class="txn-val ' + t.type + '">' + sg + '&#8377;' + fmt(t.amount) + '</div>' +
-          '</div>';
-      }).join('') : '<div class="empty-note">No transactions yet. Add your first one!</div>';
+      // Preserve search query value in the input if in search mode
+      var searchVal = esc(S.searchQ);
 
       setView(
         '<div class="view add-screen">' +
@@ -1215,10 +1308,10 @@
         '<div class="month-pill">' +
         '<span class="month-label">' + mo[m] + ' ' + y + '</span>' +
         '<div class="pill-stats">' +
-        '<span class="pill-stat"><span class="ps-lbl">&#x2B06;</span><span class="ps-val c" id="credit-val">&#8377;0</span>' +
-        '<span class="pill-stat"><span class="ps-lbl">&#x2B07;</span><span class="ps-val d" id="debit-val">&#8377;0</span>' +
+        '<span class="pill-stat"><span class="ps-lbl">&#x2B06;</span><span class="ps-val c" id="credit-val">&#8377;…</span></span>' +
+        '<span class="pill-stat"><span class="ps-lbl">&#x2B07;</span><span class="ps-val d" id="debit-val">&#8377;…</span></span>' +
         '</div>' +
-        '<span class="month-bal neu" id="balance-val">&#8377;0</span>' +
+        '<span class="month-bal neu" id="balance-val">&#8377;…</span>' +
         '</div>' +
 
         // Type toggle
@@ -1243,27 +1336,195 @@
         '</div>' +
 
         // Submit
-        '<button class="submit-btn ' + S.type + '" id="sbmt" onclick="submit()">' +
+        '<button class="submit-btn ' + S.type + '" id="sbmt" onclick="submitTxn()">' +
         (S.type === 'credit' ? '&#x2B06; Add Credit' : '&#x2B07; Add Debit') +
         '</button>' +
 
-        // Recent
+        // Recent section
         '<div class="recent-wrap">' +
-        '<div class="recent-hdr"><h3>Recent</h3><span class="txn-count">' + S.txns.length + ' total</span></div>' +
-        '<div class="txn-list">' + txnRows + '</div>' +
+        '<div class="recent-hdr"><h3>Transactions</h3><span class="txn-count" id="txn-count">loading…</span></div>' +
+
+        // Search bar
+        '<div class="search-row">' +
+        '<input type="text" id="srch-inp" placeholder="&#x1F50D; Search by reason, type, date\u2026" value="' + searchVal + '" onkeydown="if(event.key===\'Enter\')doSearch()">' +
+        '<button class="search-btn" id="srch-btn" onclick="doSearch()">Search</button>' +
+        (S.searchMode ? '<button class="search-clear-btn" onclick="clearSearch()">Clear</button>' : '') +
+        '</div>' +
+
+        // Meta / results area
+        '<div id="txn-meta"></div>' +
+        '<div class="txn-list" id="txn-list"><div class="loading-note"><div class="spin"></div> Fetching transactions…</div></div>' +
         '</div>' +
 
         '</div>'
       );
-      setTimeout(function () { var a = document.getElementById('inp-amt'); if (a) a.focus(); }, 120);
+
+      setTimeout(function () {
+        var a = document.getElementById('inp-amt');
+        if (a) a.focus();
+      }, 120);
+
+      // Load summary
+      loadSummary();
+
+      // Load transactions (recent or search results)
+      if (S.searchMode && S.searchQ) {
+        fetchSearch(S.searchQ);
+      } else {
+        fetchRecent();
+      }
     }
 
+    /* ─ Summary ──────────────────────────────── */
+    function loadSummary() {
+      fetch(S.url + '?action=summary')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var cr = d.credit || 0;
+          var db = d.debit || 0;
+          var bal = d.balance || 0;
+
+          var cv = document.getElementById('credit-val');
+          var dv = document.getElementById('debit-val');
+          var bv = document.getElementById('balance-val');
+
+          if (cv) cv.innerHTML = '&#8377;' + fmt(cr);
+          if (dv) dv.innerHTML = '&#8377;' + fmt(db);
+          if (bv) {
+            bv.innerHTML = '&#8377;' + fmt(Math.abs(bal));
+            bv.className = 'month-bal ' + (bal > 0 ? 'pos' : bal < 0 ? 'neg' : 'neu');
+          }
+        })
+        .catch(function () {
+          var cv = document.getElementById('credit-val');
+          var dv = document.getElementById('debit-val');
+          var bv = document.getElementById('balance-val');
+          if (cv) cv.innerHTML = '&#8377;–';
+          if (dv) dv.innerHTML = '&#8377;–';
+          if (bv) bv.innerHTML = '&#8377;–';
+        });
+    }
+
+    /* ─ Fetch recent 5 from Sheets ───────────── */
+    function fetchRecent() {
+      fetch(S.url + '?action=recent')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var txns = d.transactions || [];
+          renderTxnList(txns, false, null);
+          var cnt = document.getElementById('txn-count');
+          if (cnt) cnt.textContent = 'last 5';
+        })
+        .catch(function () {
+          var list = document.getElementById('txn-list');
+          if (list) list.innerHTML = '<div class="empty-note">Could not load transactions. Check Script URL.</div>';
+          var cnt = document.getElementById('txn-count');
+          if (cnt) cnt.textContent = 'error';
+        });
+    }
+
+    /* ─ Search ───────────────────────────────── */
+    function doSearch() {
+      var inp = document.getElementById('srch-inp');
+      var q = inp ? inp.value.trim() : '';
+      if (!q) { clearSearch(); return; }
+
+      S.searchMode = true;
+      S.searchQ = q;
+
+      var btn = document.getElementById('srch-btn');
+      var list = document.getElementById('txn-list');
+      var meta = document.getElementById('txn-meta');
+      var cnt = document.getElementById('txn-count');
+
+      if (btn) { btn.disabled = true; btn.innerHTML = '<div class="spin"></div>'; }
+      if (list) list.innerHTML = '<div class="loading-note"><div class="spin"></div> Searching…</div>';
+      if (meta) meta.innerHTML = '';
+
+      fetchSearch(q, function () {
+        if (btn) { btn.disabled = false; btn.textContent = 'Search'; }
+      });
+    }
+
+    function fetchSearch(q, cb) {
+      fetch(S.url + '?action=search&q=' + encodeURIComponent(q))
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var txns = d.transactions || [];
+          renderTxnList(txns, true, q);
+          var cnt = document.getElementById('txn-count');
+          if (cnt) cnt.textContent = txns.length + ' found';
+          if (cb) cb();
+        })
+        .catch(function () {
+          var list = document.getElementById('txn-list');
+          if (list) list.innerHTML = '<div class="empty-note">Search failed. Check Script URL.</div>';
+          if (cb) cb();
+        });
+    }
+
+    function clearSearch() {
+      S.searchMode = false;
+      S.searchQ = '';
+      showAdd();
+    }
+
+    /* ─ Render transaction list ──────────────── */
+    function renderTxnList(txns, isSearch, q) {
+      var list = document.getElementById('txn-list');
+      var meta = document.getElementById('txn-meta');
+      if (!list) return;
+
+      if (isSearch && q) {
+        if (meta) meta.innerHTML =
+          '<div class="search-meta">Results for <strong>"' + esc(q) + '"</strong> &mdash; ' + txns.length + ' transaction' + (txns.length !== 1 ? 's' : '') + '</div>';
+      }
+
+      if (!txns.length) {
+        list.innerHTML = '<div class="empty-note">' +
+          (isSearch ? 'No transactions matched "' + esc(q) + '".' : 'No transactions yet. Add your first one!') +
+          '</div>';
+        return;
+      }
+
+      list.innerHTML = txns.map(function (t, idx) {
+        var ic = (String(t.type).toLowerCase() === 'credit') ? '&#x2B06;' : '&#x2B07;';
+        var sg = (String(t.type).toLowerCase() === 'credit') ? '+' : '&#x2212;';
+        var tc = String(t.type).toLowerCase();
+        return '<div class="txn-row" style="animation-delay:' + (idx * 0.04) + 's">' +
+          '<div class="txn-dot ' + tc + '">' + ic + '</div>' +
+          '<div class="txn-body">' +
+          '<div class="txn-name">' + esc(String(t.reason)) + '</div>' +
+          '<div class="txn-time">' + formatDate(t.dateStr) + '</div>' +
+          '</div>' +
+          '<div class="txn-val ' + tc + '">' + sg + '&#8377;' + fmt(t.amount) + '</div>' +
+          '</div>';
+      }).join('');
+    }
+
+    /* ─ Set type ─────────────────────────────── */
     function setType(t) {
       S.type = t;
       showAdd();
     }
 
-    function submit() {
+    function formatDate(dateStr) {
+      try {
+        var d = new Date(dateStr);
+
+        return d.toLocaleDateString('en-IN', {
+          day: 'numeric',
+          month: 'short',
+          year: 'numeric'
+        });
+
+      } catch (e) {
+        return dateStr;
+      }
+    }
+
+    /* ─ Submit ───────────────────────────────── */
+    function submitTxn() {
       var av = document.getElementById('inp-amt').value;
       var amount = parseFloat(av);
       var reason = document.getElementById('inp-rsn').value.trim();
@@ -1276,8 +1537,10 @@
 
       var now = new Date();
       var entry = {
-        id: Date.now(), type: S.type,
-        amount: amount, reason: reason,
+        id: Date.now(),
+        type: S.type,
+        amount: amount,
+        reason: reason,
         date: now.toISOString(),
         dateStr: now.toLocaleDateString('en-IN'),
         timeStr: now.toLocaleTimeString('en-IN', { hour: '2-digit', minute: '2-digit' })
@@ -1287,16 +1550,34 @@
       localStorage.setItem('sp_txns', JSON.stringify(S.txns));
 
       fetch(S.url, {
-        method: 'POST', mode: 'no-cors',
-        headers: { 'Content-Type': 'application/json' },
+        method: 'POST',
+        headers: {
+          'Content-Type': 'text/plain;charset=utf-8'
+        },
         body: JSON.stringify(entry)
-      }).then(function () {
-        toast(S.type === 'credit' ? '&#x2B06; Credit saved!' : '&#x2B07; Debit saved!', 'ok');
-      }).catch(function () {
-        toast('Saved locally \u2014 check Script URL', 'err');
-      }).finally(function () {
-        setTimeout(showAdd, 350);
-      });
+      })
+        .then(r => r.json())
+        .then(data => {
+          console.log(data);
+          toast(
+            S.type === 'credit'
+              ? '⬆ Credit saved!'
+              : '⬇ Debit saved!',
+            'ok'
+          );
+        })
+        .catch(err => {
+          console.error(err);
+          toast('Failed to save transaction', 'err');
+        }).then(function () {
+          toast(S.type === 'credit' ? '&#x2B06; Credit saved!' : '&#x2B07; Debit saved!', 'ok');
+        }).catch(function () {
+          toast('Saved locally \u2014 check Script URL', 'err');
+        }).finally(function () {
+          S.searchMode = false;
+          S.searchQ = '';
+          setTimeout(showAdd, 350);
+        });
     }
 
     /* ════════════════════════════════════════════
@@ -1312,13 +1593,10 @@
         '<div class="view settings-screen">' +
 
         '<button class="back-btn" onclick="goBack()">' +
-        '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">' +
-        '<path d="M10 3L5 8l5 5"/>' +
-        '</svg>' +
+        '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M10 3L5 8l5 5"/></svg>' +
         'Back' +
         '</button>' +
 
-        // Status
         '<div class="s-section">' +
         '<span class="s-label">Connection</span>' +
         '<div class="s-card">' +
@@ -1327,7 +1605,6 @@
         '</div>' +
         '</div>' +
 
-        // Steps
         '<div class="s-section">' +
         '<span class="s-label">How to Set Up</span>' +
         '<div class="s-card">' +
@@ -1342,7 +1619,6 @@
         '</div>' +
         '</div>' +
 
-        // Code
         '<div class="s-section">' +
         '<span class="s-label">Apps Script Code</span>' +
         '<div class="s-card">' +
@@ -1352,7 +1628,6 @@
         '</div>' +
         '</div>' +
 
-        // URL
         '<div class="s-section">' +
         '<span class="s-label">Web App URL</span>' +
         '<div class="s-card">' +
@@ -1365,7 +1640,6 @@
         '</div>' +
         '</div>' +
 
-        // Guide
         '<div class="s-section">' +
         '<span class="s-label">&#x1F4CA; Reports in Sheets</span>' +
         '<div class="s-card">' +
@@ -1377,41 +1651,15 @@
         '</div>' +
         '</div>' +
 
-        // Developer Credits
         '<div class="s-section">' +
         '<span class="s-label">Developer</span>' +
         '<div class="s-card" style="text-align:center;">' +
-
-        '<div style="font-family:Syne,sans-serif;font-size:18px;font-weight:800;' +
-        'background:linear-gradient(135deg,var(--accent),var(--credit));' +
-        '-webkit-background-clip:text;' +
-        '-webkit-text-fill-color:transparent;' +
-        'margin-bottom:8px;">' +
-        'Tarun Mhanta' +
-        '</div>' +
-
-        '<p style="margin-bottom:10px;">' +
-        'Designed & Developed with passion for smart finance tracking, automation and modern user experiences.' +
-        '</p>' +
-
+        '<div style="font-family:Syne,sans-serif;font-size:18px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--credit));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:8px;">Tarun Mhanta</div>' +
+        '<p style="margin-bottom:10px;">Designed &amp; Developed with passion for smart finance tracking, automation and modern user experiences.</p>' +
         '<div style="display:flex;justify-content:center;gap:10px;flex-wrap:wrap;">' +
-
-        '<a href="https://github.com/tarunmhanta" target="_blank" ' +
-        'style="text-decoration:none;padding:8px 14px;border-radius:12px;' +
-        'background:var(--surface2);border:1px solid var(--border);' +
-        'color:var(--text);font-size:12px;font-weight:600;">' +
-        '&#x1F4BB; GitHub' +
-        '</a>' +
-
-        '<a href="https://www.linkedin.com/in/tarun-mhanta/" target="_blank" ' +
-        'style="text-decoration:none;padding:8px 14px;border-radius:12px;' +
-        'background:var(--surface2);border:1px solid var(--border);' +
-        'color:var(--text);font-size:12px;font-weight:600;">' +
-        '&#x1F465; LinkedIn' +
-        '</a>' +
-
+        '<a href="https://github.com/tarunmhanta" target="_blank" style="text-decoration:none;padding:8px 14px;border-radius:12px;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:600;">&#x1F4BB; GitHub</a>' +
+        '<a href="https://www.linkedin.com/in/tarun-mhanta/" target="_blank" style="text-decoration:none;padding:8px 14px;border-radius:12px;background:var(--surface2);border:1px solid var(--border);color:var(--text);font-size:12px;font-weight:600;">&#x1F465; LinkedIn</a>' +
         '</div>' +
-
         '</div>' +
         '</div>' +
 
@@ -1448,6 +1696,7 @@
         fallback(GAS, done);
       }
     }
+
     function fallback(txt, cb) {
       var ta = document.createElement('textarea');
       ta.value = txt; ta.style.cssText = 'position:fixed;opacity:0';
@@ -1455,9 +1704,10 @@
       try { document.execCommand('copy'); cb(); } catch (e) { toast('Copy manually', 'err'); }
       document.body.removeChild(ta);
     }
+
     function flashCopy() {
       var b = document.getElementById('cpbtn'); if (!b) return;
-      b.textContent = '&#x2713; Copied!'; b.classList.add('copied');
+      b.textContent = '✓ Copied!'; b.classList.add('copied');
       setTimeout(function () { b.innerHTML = '&#x1F4CB; Copy Code'; b.classList.remove('copied'); }, 2000);
     }
 
@@ -1469,6 +1719,7 @@
     function fmt(n) {
       return parseFloat(n).toLocaleString('en-IN', { minimumFractionDigits: 0, maximumFractionDigits: 2 });
     }
+
     function esc(s) {
       return String(s)
         .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
