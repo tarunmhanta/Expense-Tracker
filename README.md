@@ -188,7 +188,7 @@ Possible future upgrades:
 * Category support
 * Export to PDF
 * Pie charts
-* Search transactions
+* Search transactions [✔ Done]
 * Multi-user sync
 * Authentication
 * Budget goals
