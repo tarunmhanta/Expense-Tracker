@@ -704,6 +704,274 @@
       gap: 8px;
     }
 
+    /* ══ NAV TABS ══ */
+    .nav-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 18px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 4px;
+    }
+
+    .nav-tab {
+      flex: 1;
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      padding: 10px 8px;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+
+    .nav-tab.active {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 4px 14px rgba(124, 108, 252, .35);
+    }
+
+    .nav-tab:not(.active):hover {
+      color: var(--text);
+    }
+
+    /* ══ LENDING ══ */
+    .lend-summary {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+
+    .lend-stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 12px 10px;
+      text-align: center;
+    }
+
+    .lend-stat-card .lsc-lbl {
+      font-size: 10px;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .6px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .lend-stat-card .lsc-val {
+      font-family: 'Syne', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+    }
+
+    .lend-stat-card.lent .lsc-val {
+      color: var(--gold);
+    }
+
+    .lend-stat-card.returned .lsc-val {
+      color: var(--credit);
+    }
+
+    .lend-stat-card.outstanding .lsc-val {
+      color: var(--debit);
+    }
+
+    .lend-form-toggle {
+      width: 100%;
+      padding: 14px;
+      border: 2px dashed var(--border);
+      border-radius: var(--r);
+      background: transparent;
+      color: var(--muted);
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      cursor: pointer;
+      margin-bottom: 18px;
+      transition: all .2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .lend-form-toggle:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    input[type=text].name-inp {
+      width: 100%;
+      background: var(--surface);
+      border: 1.5px solid var(--border);
+      border-radius: var(--r-sm);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      padding: 13px 15px;
+      outline: none;
+      transition: border-color .2s, box-shadow .2s;
+      -webkit-appearance: none;
+      appearance: none;
+    }
+
+    input[type=text].name-inp:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    .loan-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .loan-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--r-sm);
+      padding: 14px;
+      animation: rise .3s ease both;
+    }
+
+    .loan-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 4px;
+    }
+
+    .loan-person {
+      font-family: 'Syne', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .loan-note {
+      font-size: 12px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .loan-amt {
+      text-align: right;
+      flex-shrink: 0;
+    }
+
+    .loan-amt .la-given {
+      font-family: 'Syne', sans-serif;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--gold);
+    }
+
+    .loan-amt .la-out {
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .loan-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid var(--border);
+    }
+
+    .loan-badge {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    .loan-badge.pending {
+      background: rgba(255, 209, 102, .12);
+      color: var(--gold);
+      border: 1px solid rgba(255, 209, 102, .3);
+    }
+
+    .loan-badge.settled {
+      background: var(--credit-dim);
+      color: var(--credit);
+      border: 1px solid rgba(0, 229, 160, .25);
+    }
+
+    .loan-actions {
+      display: flex;
+      gap: 6px;
+    }
+
+    .loan-btn {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 6px 11px;
+      border-radius: var(--r-xs);
+      border: 1px solid var(--border);
+      background: var(--surface2);
+      color: var(--text);
+      cursor: pointer;
+      transition: all .2s;
+      white-space: nowrap;
+    }
+
+    .loan-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    .loan-btn.full:hover {
+      border-color: var(--credit);
+      color: var(--credit);
+    }
+
+    .repay-row {
+      display: none;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .repay-row.open {
+      display: flex;
+    }
+
+    .repay-row input[type=number] {
+      flex: 1;
+      height: auto;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      padding: 9px 12px;
+    }
+
+    .repay-row button {
+      padding: 0 14px;
+      border: none;
+      border-radius: var(--r-xs);
+      background: var(--credit);
+      color: #0a1a10;
+      font-family: 'Syne', sans-serif;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
     /* ══ SETTINGS ══ */
     .settings-screen {
       flex: 1;
@@ -1046,6 +1314,12 @@
       "  try {",
       "    var d = JSON.parse(e.postData.contents);",
       "    var ss = SpreadsheetApp.getActiveSpreadsheet();",
+      "",
+      "    // ── Lending actions ──────────────────────",
+      "    if (d.action === 'addLend') return addLend(ss, d);",
+      "    if (d.action === 'repay')   return addRepayment(ss, d);",
+      "",
+      "    // ── Default: regular transaction ─────────",
       "    var ts = ss.getSheetByName('Transactions');",
       "    if (!ts) {",
       "      ts = ss.insertSheet('Transactions');",
@@ -1067,6 +1341,54 @@
       "      .createTextOutput(JSON.stringify({ok:false,e:err.toString()}))",
       "      .setMimeType(ContentService.MimeType.JSON);",
       "  }",
+      "}",
+      "",
+      "// ── Lending sheet helpers ──────────────────",
+      "function ensureLendingSheet(ss) {",
+      "  var sh = ss.getSheetByName('Lending');",
+      "  if (!sh) {",
+      "    sh = ss.insertSheet('Lending');",
+      "    sh.appendRow(['ID','Person','Amount','DateGiven','Note','Returned','Status','LastUpdated']);",
+      "    sh.getRange(1,1,1,8).setFontWeight('bold')",
+      "      .setBackground('#2e2410').setFontColor('#ffd166');",
+      "  }",
+      "  return sh;",
+      "}",
+      "",
+      "function addLend(ss, d) {",
+      "  var sh = ensureLendingSheet(ss);",
+      "  var id = 'L' + Date.now();",
+      "  var now = new Date();",
+      "  sh.appendRow([id, d.person, parseFloat(d.amount), d.dateStr || now.toLocaleDateString(),",
+      "    d.note || '', 0, 'pending', now]);",
+      "  return ContentService",
+      "    .createTextOutput(JSON.stringify({ok:true, id:id}))",
+      "    .setMimeType(ContentService.MimeType.JSON);",
+      "}",
+      "",
+      "function addRepayment(ss, d) {",
+      "  var sh = ensureLendingSheet(ss);",
+      "  var data = sh.getDataRange().getValues();",
+      "  for (var i = 1; i < data.length; i++) {",
+      "    if (String(data[i][0]) === String(d.id)) {",
+      "      var amount = Number(data[i][2]) || 0;",
+      "      var already = Number(data[i][5]) || 0;",
+      "      var add = d.full ? (amount - already) : (parseFloat(d.amount) || 0);",
+      "      var newReturned = already + add;",
+      "      if (newReturned > amount) newReturned = amount;",
+      "      var status = newReturned >= amount ? 'settled' : 'pending';",
+      "      var r = i + 1;",
+      "      sh.getRange(r, 6).setValue(newReturned);",
+      "      sh.getRange(r, 7).setValue(status);",
+      "      sh.getRange(r, 8).setValue(new Date());",
+      "      return ContentService",
+      "        .createTextOutput(JSON.stringify({ok:true, status:status}))",
+      "        .setMimeType(ContentService.MimeType.JSON);",
+      "    }",
+      "  }",
+      "  return ContentService",
+      "    .createTextOutput(JSON.stringify({ok:false, e:'Loan not found'}))",
+      "    .setMimeType(ContentService.MimeType.JSON);",
       "}",
       "",
       "function doGet(e) {",
@@ -1157,6 +1479,53 @@
       "      }",
       "      return ContentService",
       "        .createTextOutput(JSON.stringify({success:true,transactions:results,total:results.length}))",
+      "        .setMimeType(ContentService.MimeType.JSON);",
+      "    }",
+      "",
+      "    // ── Lending summary (totals) ─────────────────",
+      "    if (action === 'lendSummary') {",
+      "      var ss = SpreadsheetApp.getActiveSpreadsheet();",
+      "      var sheet = ss.getSheetByName('Lending');",
+      "      if (!sheet || sheet.getLastRow() < 2) {",
+      "        return ContentService",
+      "          .createTextOutput(JSON.stringify({success:true,totalLent:0,totalReturned:0,outstanding:0}))",
+      "          .setMimeType(ContentService.MimeType.JSON);",
+      "      }",
+      "      var data = sheet.getRange(2,1,sheet.getLastRow()-1,6).getValues();",
+      "      var totalLent = 0, totalReturned = 0;",
+      "      for (var i = 0; i < data.length; i++) {",
+      "        totalLent     += Number(data[i][2]) || 0;",
+      "        totalReturned += Number(data[i][5]) || 0;",
+      "      }",
+      "      return ContentService",
+      "        .createTextOutput(JSON.stringify({success:true,totalLent:totalLent,totalReturned:totalReturned,outstanding:totalLent-totalReturned}))",
+      "        .setMimeType(ContentService.MimeType.JSON);",
+      "    }",
+      "",
+      "    // ── Lending list (all loans; client filters by status) ─",
+      "    if (action === 'lendList') {",
+      "      var ss = SpreadsheetApp.getActiveSpreadsheet();",
+      "      var sheet = ss.getSheetByName('Lending');",
+      "      if (!sheet || sheet.getLastRow() < 2) {",
+      "        return ContentService",
+      "          .createTextOutput(JSON.stringify({success:true,loans:[]}))",
+      "          .setMimeType(ContentService.MimeType.JSON);",
+      "      }",
+      "      var data = sheet.getRange(2,1,sheet.getLastRow()-1,7).getValues();",
+      "      var loans = [];",
+      "      for (var i = data.length - 1; i >= 0; i--) {",
+      "        loans.push({",
+      "          id:         data[i][0],",
+      "          person:     data[i][1],",
+      "          amount:     data[i][2],",
+      "          dateGiven:  data[i][3],",
+      "          note:       data[i][4],",
+      "          returned:   data[i][5],",
+      "          status:     data[i][6]",
+      "        });",
+      "      }",
+      "      return ContentService",
+      "        .createTextOutput(JSON.stringify({success:true,loans:loans}))",
       "        .setMimeType(ContentService.MimeType.JSON);",
       "    }",
       "",
@@ -1253,7 +1622,11 @@
       txns: JSON.parse(localStorage.getItem('sp_txns') || '[]'),
       type: 'debit',
       searchMode: false,
-      searchQ: ''
+      searchQ: '',
+      lendFormOpen: false,
+      lendFilter: 'pending',
+      cache: { summary: null, recent: null, loans: null, lendSummary: null },
+      loaded: { summary: false, recent: false, loans: false, lendSummary: false }
     };
 
     /* ════════════════════════════════════════════
@@ -1303,6 +1676,12 @@
 
       setView(
         '<div class="view add-screen">' +
+
+        // Nav tabs
+        '<div class="nav-tabs">' +
+        '<button class="nav-tab active">Track</button>' +
+        '<button class="nav-tab" onclick="showLend()">Lending</button>' +
+        '</div>' +
 
         // Month pill
         '<div class="month-pill">' +
@@ -1364,36 +1743,40 @@
         if (a) a.focus();
       }, 120);
 
-      // Load summary
-      loadSummary();
+      // Summary & transaction list — served from cache unless not yet loaded
+      renderSummarySection();
+      renderTxnSection();
+    }
 
-      // Load transactions (recent or search results)
-      if (S.searchMode && S.searchQ) {
-        fetchSearch(S.searchQ);
+    /* ─ Summary (cache-aware) ────────────────── */
+    function renderSummarySection() {
+      if (S.loaded.summary && S.cache.summary) {
+        applySummaryToDom(S.cache.summary);
       } else {
-        fetchRecent();
+        loadSummary();
       }
     }
 
-    /* ─ Summary ──────────────────────────────── */
+    function applySummaryToDom(d) {
+      var cv = document.getElementById('credit-val');
+      var dv = document.getElementById('debit-val');
+      var bv = document.getElementById('balance-val');
+      if (cv) cv.innerHTML = '&#8377;' + fmt(d.credit || 0);
+      if (dv) dv.innerHTML = '&#8377;' + fmt(d.debit || 0);
+      if (bv) {
+        bv.innerHTML = '&#8377;' + fmt(Math.abs(d.balance || 0));
+        bv.className = 'month-bal ' + (d.balance > 0 ? 'pos' : d.balance < 0 ? 'neg' : 'neu');
+      }
+    }
+
     function loadSummary() {
       fetch(S.url + '?action=summary')
         .then(function (r) { return r.json(); })
         .then(function (d) {
-          var cr = d.credit || 0;
-          var db = d.debit || 0;
-          var bal = d.balance || 0;
-
-          var cv = document.getElementById('credit-val');
-          var dv = document.getElementById('debit-val');
-          var bv = document.getElementById('balance-val');
-
-          if (cv) cv.innerHTML = '&#8377;' + fmt(cr);
-          if (dv) dv.innerHTML = '&#8377;' + fmt(db);
-          if (bv) {
-            bv.innerHTML = '&#8377;' + fmt(Math.abs(bal));
-            bv.className = 'month-bal ' + (bal > 0 ? 'pos' : bal < 0 ? 'neg' : 'neu');
-          }
+          var data = { credit: d.credit || 0, debit: d.debit || 0, balance: d.balance || 0 };
+          S.cache.summary = data;
+          S.loaded.summary = true;
+          applySummaryToDom(data);
         })
         .catch(function () {
           var cv = document.getElementById('credit-val');
@@ -1405,12 +1788,28 @@
         });
     }
 
-    /* ─ Fetch recent 5 from Sheets ───────────── */
+    /* ─ Transaction list (cache-aware) ───────── */
+    function renderTxnSection() {
+      if (S.searchMode && S.searchQ) {
+        fetchSearch(S.searchQ);
+        return;
+      }
+      if (S.loaded.recent && S.cache.recent) {
+        renderTxnList(S.cache.recent, false, null);
+        var cnt = document.getElementById('txn-count');
+        if (cnt) cnt.textContent = 'last 5';
+      } else {
+        fetchRecent();
+      }
+    }
+
     function fetchRecent() {
       fetch(S.url + '?action=recent')
         .then(function (r) { return r.json(); })
         .then(function (d) {
           var txns = d.transactions || [];
+          S.cache.recent = txns;
+          S.loaded.recent = true;
           renderTxnList(txns, false, null);
           var cnt = document.getElementById('txn-count');
           if (cnt) cnt.textContent = 'last 5';
@@ -1556,27 +1955,255 @@
         },
         body: JSON.stringify(entry)
       })
-        .then(r => r.json())
-        .then(data => {
-          console.log(data);
-          toast(
-            S.type === 'credit'
-              ? '⬆ Credit saved!'
-              : '⬇ Debit saved!',
-            'ok'
-          );
-        })
-        .catch(err => {
-          console.error(err);
-          toast('Failed to save transaction', 'err');
-        }).then(function () {
+        .then(function (r) { return r.json(); })
+        .then(function () {
           toast(S.type === 'credit' ? '&#x2B06; Credit saved!' : '&#x2B07; Debit saved!', 'ok');
-        }).catch(function () {
+        })
+        .catch(function () {
           toast('Saved locally \u2014 check Script URL', 'err');
-        }).finally(function () {
+        })
+        .finally(function () {
+          // Data changed — force a fresh fetch next time it renders
+          S.loaded.summary = false;
+          S.loaded.recent = false;
           S.searchMode = false;
           S.searchQ = '';
           setTimeout(showAdd, 350);
+        });
+    }
+
+    /* ════════════════════════════════════════════
+       LENDING (borrow / lend to friends)
+    ════════════════════════════════════════════ */
+    function showLend() {
+      document.getElementById('gear').style.display = 'flex';
+
+      setView(
+        '<div class="view add-screen">' +
+
+        '<div class="nav-tabs">' +
+        '<button class="nav-tab" onclick="showAdd()">Track</button>' +
+        '<button class="nav-tab active">Lending</button>' +
+        '</div>' +
+
+        '<div class="lend-summary">' +
+        '<div class="lend-stat-card lent"><span class="lsc-lbl">Lent</span><span class="lsc-val" id="lend-total-val">&#8377;…</span></div>' +
+        '<div class="lend-stat-card returned"><span class="lsc-lbl">Returned</span><span class="lsc-val" id="lend-returned-val">&#8377;…</span></div>' +
+        '<div class="lend-stat-card outstanding"><span class="lsc-lbl">Outstanding</span><span class="lsc-val" id="lend-outstanding-val">&#8377;…</span></div>' +
+        '</div>' +
+
+        '<button class="lend-form-toggle" id="lend-toggle-btn" onclick="toggleLendForm()">' +
+        (S.lendFormOpen ? 'Close' : 'Add Loan') +
+        '</button>' +
+
+        '<div id="lend-form-wrap">' + (S.lendFormOpen ? lendFormHtml() : '') + '</div>' +
+
+        '<div class="recent-hdr" style="margin-top:22px;">' +
+        '<h3>Loans</h3>' +
+        '<span class="txn-count" id="loan-count">loading…</span>' +
+        '</div>' +
+
+        '<div class="type-row" style="margin-bottom:14px;">' +
+        '<button class="type-btn ' + (S.lendFilter === 'pending' ? 'd-active' : '') + '" onclick="setLendFilter(\'pending\')">Outstanding</button>' +
+        '<button class="type-btn ' + (S.lendFilter === 'settled' ? 'c-active' : '') + '" onclick="setLendFilter(\'settled\')">Settled</button>' +
+        '</div>' +
+
+        '<div class="loan-list" id="loan-list"><div class="loading-note"><div class="spin"></div> Fetching loans…</div></div>' +
+
+        '</div>'
+      );
+
+      renderLendSummarySection();
+      renderLoanSection();
+    }
+
+    function lendFormHtml() {
+      return '<div class="s-card" style="margin-bottom:18px;">' +
+        '<div class="field"><label>Friend\'s Name</label>' +
+        '<input type="text" class="name-inp" id="lend-name" placeholder="e.g. Rahul"></div>' +
+        '<div class="field"><label>Amount (&#8377;)</label>' +
+        '<div class="amt-wrap"><span class="amt-prefix">&#8377;</span>' +
+        '<input type="number" id="lend-amt" placeholder="0.00" min="0" step="0.01" inputmode="decimal"></div></div>' +
+        '<div class="field"><label>Note (optional)</label>' +
+        '<textarea id="lend-note" placeholder="e.g. For movie tickets, cab fare\u2026" style="height:66px;"></textarea></div>' +
+        '<button class="submit-btn debit" id="lend-sbmt" onclick="submitLend()">Save Loan</button>' +
+        '</div>';
+    }
+
+    function toggleLendForm() {
+      S.lendFormOpen = !S.lendFormOpen;
+      var wrap = document.getElementById('lend-form-wrap');
+      var btn = document.getElementById('lend-toggle-btn');
+      if (wrap) wrap.innerHTML = S.lendFormOpen ? lendFormHtml() : '';
+      if (btn) btn.textContent = S.lendFormOpen ? 'Close' : 'Add Loan';
+      if (S.lendFormOpen) {
+        setTimeout(function () {
+          var n = document.getElementById('lend-name');
+          if (n) n.focus();
+        }, 80);
+      }
+    }
+
+    function setLendFilter(f) {
+      S.lendFilter = f;
+      showLend();
+    }
+
+    /* ─ Lend summary (cache-aware) ───────────── */
+    function renderLendSummarySection() {
+      if (S.loaded.lendSummary && S.cache.lendSummary) {
+        applyLendSummaryToDom(S.cache.lendSummary);
+      } else {
+        fetchLendSummary();
+      }
+    }
+
+    function applyLendSummaryToDom(d) {
+      var lv = document.getElementById('lend-total-val');
+      var rv = document.getElementById('lend-returned-val');
+      var ov = document.getElementById('lend-outstanding-val');
+      if (lv) lv.innerHTML = '&#8377;' + fmt(d.totalLent || 0);
+      if (rv) rv.innerHTML = '&#8377;' + fmt(d.totalReturned || 0);
+      if (ov) ov.innerHTML = '&#8377;' + fmt(d.outstanding || 0);
+    }
+
+    function fetchLendSummary() {
+      fetch(S.url + '?action=lendSummary')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          var data = { totalLent: d.totalLent || 0, totalReturned: d.totalReturned || 0, outstanding: d.outstanding || 0 };
+          S.cache.lendSummary = data;
+          S.loaded.lendSummary = true;
+          applyLendSummaryToDom(data);
+        })
+        .catch(function () {
+          ['lend-total-val', 'lend-returned-val', 'lend-outstanding-val'].forEach(function (id) {
+            var el = document.getElementById(id);
+            if (el) el.innerHTML = '&#8377;–';
+          });
+        });
+    }
+
+    /* ─ Loan list (cache-aware, filtered client-side) ─ */
+    function renderLoanSection() {
+      if (S.loaded.loans && S.cache.loans) {
+        renderFilteredLoans();
+      } else {
+        fetchLendList();
+      }
+    }
+
+    function fetchLendList() {
+      fetch(S.url + '?action=lendList')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          S.cache.loans = d.loans || [];
+          S.loaded.loans = true;
+          renderFilteredLoans();
+        })
+        .catch(function () {
+          var list = document.getElementById('loan-list');
+          if (list) list.innerHTML = '<div class="empty-note">Could not load loans. Check Script URL / re-copy the Apps Script code.</div>';
+          var cnt = document.getElementById('loan-count');
+          if (cnt) cnt.textContent = 'error';
+        });
+    }
+
+    function renderFilteredLoans() {
+      var filtered = (S.cache.loans || []).filter(function (l) {
+        return String(l.status).toLowerCase() === S.lendFilter;
+      });
+      renderLoanList(filtered);
+      var cnt = document.getElementById('loan-count');
+      if (cnt) cnt.textContent = filtered.length + ' ' + (S.lendFilter === 'pending' ? 'outstanding' : 'settled');
+    }
+
+    function renderLoanList(loans) {
+      var list = document.getElementById('loan-list');
+      if (!list) return;
+
+      if (!loans.length) {
+        list.innerHTML = '<div class="empty-note">' +
+          (S.lendFilter === 'pending' ? 'No outstanding loans.' : 'No settled loans yet.') +
+          '</div>';
+        return;
+      }
+
+      list.innerHTML = loans.map(function (l, idx) {
+        var outstanding = Math.max(0, (Number(l.amount) || 0) - (Number(l.returned) || 0));
+        var settled = String(l.status).toLowerCase() === 'settled';
+        return '<div class="loan-card" style="animation-delay:' + (idx * 0.04) + 's">' +
+          '<div class="loan-top">' +
+          '<div><div class="loan-person">' + esc(String(l.person)) + '</div>' +
+          (l.note ? '<div class="loan-note">' + esc(String(l.note)) + '</div>' : '') +
+          '<div class="loan-note">' + formatDate(l.dateGiven) + '</div></div>' +
+          '<div class="loan-amt"><div class="la-given">&#8377;' + fmt(l.amount) + '</div>' +
+          (!settled ? '<div class="la-out">&#8377;' + fmt(outstanding) + ' left</div>' : '<div class="la-out">fully returned</div>') +
+          '</div>' +
+          '</div>' +
+          '<div class="loan-meta-row">' +
+          '<span class="loan-badge ' + (settled ? 'settled' : 'pending') + '">' + (settled ? 'Settled' : 'Pending') + '</span>' +
+          '</div>' +
+          (!settled ?
+            '<div class="repay-row open">' +
+            '<input type="number" id="repay-amt-' + l.id + '" value="' + outstanding + '" min="0" step="0.01">' +
+            '<button onclick="submitRepay(\'' + l.id + '\', ' + outstanding + ')">Settle</button>' +
+            '</div>' : '') +
+          '</div>';
+      }).join('');
+    }
+
+    function submitRepay(id, outstanding) {
+      var inp = document.getElementById('repay-amt-' + id);
+      var amt = parseFloat(inp ? inp.value : '');
+      if (!amt || isNaN(amt) || amt <= 0) { toast('Enter a valid amount', 'err'); return; }
+      if (amt > outstanding + 0.01) { toast('Amount exceeds what\u2019s left', 'err'); return; }
+      postLend({ action: 'repay', id: id, amount: amt }, amt >= outstanding ? 'Loan fully settled!' : 'Repayment saved!');
+    }
+
+    function submitLend() {
+      var name = document.getElementById('lend-name').value.trim();
+      var av = document.getElementById('lend-amt').value;
+      var amount = parseFloat(av);
+      var note = document.getElementById('lend-note').value.trim();
+      if (!name) { toast('Enter friend\u2019s name', 'err'); return; }
+      if (!av || isNaN(amount) || amount <= 0) { toast('Enter a valid amount', 'err'); return; }
+
+      var btn = document.getElementById('lend-sbmt');
+      btn.disabled = true;
+      btn.innerHTML = '<div class="spin"></div> Saving\u2026';
+
+      var now = new Date();
+      postLend({
+        action: 'addLend',
+        person: name,
+        amount: amount,
+        note: note,
+        date: now.toISOString(),
+        dateStr: now.toLocaleDateString('en-IN')
+      }, 'Loan saved!');
+    }
+
+    function postLend(payload, successMsg) {
+      fetch(S.url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          if (d && d.ok === false) { toast('Failed: ' + (d.e || 'unknown error'), 'err'); return; }
+          toast(successMsg, 'ok');
+        })
+        .catch(function () {
+          toast('Failed \u2014 check Script URL / re-copy the Apps Script code', 'err');
+        })
+        .finally(function () {
+          // Data changed — force a fresh fetch next time Lending renders
+          S.loaded.lendSummary = false;
+          S.loaded.loans = false;
+          S.lendFormOpen = false;
+          setTimeout(showLend, 350);
         });
     }
 
@@ -1648,6 +2275,7 @@
         '<p>&#x1F4C5; <strong style="color:var(--text)">Monthly_YYYY</strong> &#x2014; credit/debit totals per month + bar chart.</p>' +
         '<p>&#x1F4C6; <strong style="color:var(--text)">Yearly_Summary</strong> &#x2014; year-over-year totals + column chart.</p>' +
         '<p>For <strong style="color:var(--text)">weekly</strong> reports, filter Transactions by the <em style="color:var(--gold)">Week</em> column.</p>' +
+        '<p><strong style="color:var(--text)">Lending</strong> &#x2014; tracks money you lend to friends: who, how much, when, and what\u2019s still outstanding. Found in the Lending tab.</p>' +
         '</div>' +
         '</div>' +
 
@@ -1677,6 +2305,7 @@
       if (!v || !v.startsWith('https://')) { toast('Enter a valid HTTPS URL', 'err'); return; }
       S.url = v;
       localStorage.setItem('sp_url', v);
+      resetCache();
       toast('&#x2713; Connected!', 'ok');
       setTimeout(function () { goBack(); }, 700);
     }
@@ -1684,8 +2313,14 @@
     function removeUrl() {
       S.url = '';
       localStorage.removeItem('sp_url');
+      resetCache();
       toast('Connection removed', '');
       goSettings();
+    }
+
+    function resetCache() {
+      S.cache = { summary: null, recent: null, loans: null, lendSummary: null };
+      S.loaded = { summary: false, recent: false, loans: false, lendSummary: false };
     }
 
     function copyGas() {
